@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #ee4d2d;
+    --while-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --star-gold: #ffce3e;
+    --border-color: #dbdbdb;
+    --navbar-height: 34px;
+    --header-height: 120px;
+    --header__sort-bar-height: 64px;
+    --header-with-search-height:calc(var(--header-height) - var(--navbar-height))
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto',sans-serif;
+    box-sizing: border-box;
+}
+
+/* responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width {
+    width: 100%;
+}
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+
+}
+/* test */
+.grid__column-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 16.6667%;
+}
+.grid__column-2-4 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 83.3334%;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to 
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    form {
+        transform: scale(var(--growth-form));
+    } 
+    to 
+    {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* modal */
+
+.modal {
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body {
+    /* width: 300px; */
+    /* height: 300px; */
+    /* background-color: var(--while-color); */
+    /* display: flex; */
+    --growth-form: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: growth linear 0.1s;
+    /* border-radius: 5px; */
+}
+/* button style */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--while-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+.btn.btn-normal:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+.btn.btn--primary {
+    color: var(--while-color);
+    background-color: var(--primary-color);
+}
+.btn.btn--disabled {
+    cursor: default;
+}
+
+/* selection */
+.select-input {
+    position: relative;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    min-width: 200px;
+    background-color: var(--while-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select-input__label {
+    font-size: 1.4rem;
+}
+.select-input__icon {
+    font-size: 1.4rem;
+    color: #646363;
+    position: relative;
+    top: 1px;
+}
+
+.select-input__list {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    background-color: var(--while-color);
+    padding:10px 16px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+.select-input__link {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.pagination-item {
+    margin: 0 12px;
+}
+.pagination-item--active .pagination-item__link{
+    background-color: var(--primary-color);
+    color: var(--while-color);
+    border-radius: 2px;
+}
+.pagination-item--active .pagination-item__link:hover {
+    background-color: rgb(232, 94, 94);
+}
+.pagination-item__link {
+    --height: 30px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    display: block;
+}
